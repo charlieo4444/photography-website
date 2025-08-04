@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charlie Ogle Photography</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="theme-toggle">
+        <label class="switch">
+            <input type="checkbox" id="theme-switch">
+            <span class="slider"></span>
+        </label>
+        <span class="toggle-label">Toggle Dark/Light</span>
+    </div>
+
+    <h1>Charlie Ogle Photography</h1>
+
+    <div class="gallery">
+        <img src="photos/lightning 9-19-23.jpg" alt="Lightning 9-19-23" />
+        <img src="photos/lightning 8-28-24.jpg" alt="lightning 8-28-24" />
+        <img src="photos/lightning 7-31-23.jpg" alt="lightning 7-31-23" />
+        <img src="photos/lightning.jpg" alt="lightning" />
+        <img src="photos/Miami 4-17-23.jpg" alt="Miami 4-17-23" />
+        <img src="photos/DSC_0133.jpg" alt="Miami lightning" />
+        <img src="photos/DSC_0062.jpg" alt="Miami lightning" />
+        <img src="photos/Lightning Over Shalala.jpg" alt="Lightning Over Shalala" />
+        <img src="photos/Impending Lightning.jpg" alt="Impending Lightning" />
+        <img src="photos/lightning 5-4-22.jpg" alt="lightning 5-4-22" />
+        <img src="photos/lightning - AZ.jpg" alt="lightning - AZ" />
+        <img src="photos/lightning - FL.jpg" alt="lightning - FL" />
+        <img src="photos/stack 1-2.jpg" alt="stack 1-2" />
+        <img src="photos/stack 2-3.jpg" alt="stack 2-3" />
+        <img src="photos/DSC_2243-3.jpg" alt="Miami lightning" />
+        <img src="photos/1st FL lightning.jpg" alt="1st FL lightning" />
+        <img src="photos/DSC_2485.jpg" alt="Miami lightning" />
+        <img src="photos/FtLauderdale Storm.jpg" alt="FtLauderdale Storm" />
+        <img src="photos/DSC_2358.jpg" alt="Miami lightning" />
+        <img src="photos/lightning 4-17-23.jpg" alt="lightning 4-17-23" />
+    </div>
+
+    <script>
+        const toggle = document.getElementById('theme-switch');
+        const root = document.documentElement;
+        const storedTheme = localStorage.getItem('theme');
+
+        const setTheme = (mode) => {
+            root.setAttribute('data-theme', mode);
+            localStorage.setItem('theme', mode);
+            toggle.checked = (mode === 'dark');
+        };
+
+        toggle.addEventListener('change', () => {
+            setTheme(toggle.checked ? 'dark' : 'light');
+        });
+
+        if (storedTheme) {
+            setTheme(storedTheme);
+        } else {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            setTheme(prefersDark ? 'dark' : 'light');
+        }
+    </script>
+</body>
+
+</html>
