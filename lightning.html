@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Charlie Ogle Photography</title>
+    <title>Charlie Ogle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -14,10 +15,22 @@
             <input type="checkbox" id="theme-switch">
             <span class="slider"></span>
         </label>
-        <span class="toggle-label">Toggle Dark/Light</span>
+        <span class="toggle-label">Dark / Light Mode</span>
     </div>
 
-    <h1>Charlie Ogle Photography</h1>
+    <h1>Charlie Ogle</h1>
+
+    <hr />
+    <nav class="nav-links">
+        <a href="lightning.html">Lightning</a>
+        <a href="water.html">Water</a>
+        <a href="landscape.html">Landscape</a>
+        <a href="nature.html">Nature</a>
+        <a href="astro.html">Astro</a>
+        <a href="macro.html">Macro</a>
+        <a href="about.html">About</a>
+    </nav>
+    <hr />
 
     <div class="gallery">
         <img src="photos/lightning 9-19-23.jpg" alt="Lightning 9-19-23" />
@@ -42,28 +55,8 @@
         <img src="photos/lightning 4-17-23.jpg" alt="lightning 4-17-23" />
     </div>
 
-    <script>
-        const toggle = document.getElementById('theme-switch');
-        const root = document.documentElement;
-        const storedTheme = localStorage.getItem('theme');
+    <script src="theme-toggle.js"></script>
 
-        const setTheme = (mode) => {
-            root.setAttribute('data-theme', mode);
-            localStorage.setItem('theme', mode);
-            toggle.checked = (mode === 'dark');
-        };
-
-        toggle.addEventListener('change', () => {
-            setTheme(toggle.checked ? 'dark' : 'light');
-        });
-
-        if (storedTheme) {
-            setTheme(storedTheme);
-        } else {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            setTheme(prefersDark ? 'dark' : 'light');
-        }
-    </script>
 </body>
 
 </html>
