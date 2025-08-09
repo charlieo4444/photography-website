@@ -51,12 +51,16 @@ hr {
     margin: 2rem 0;
 }
 
-.theme-toggle {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
+/* Dark/Light mode toggle */
+#theme-toggle {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    border: none;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
 }
 
 .switch {
@@ -120,9 +124,9 @@ input:checked+.slider:before {
 }
 
 .gallery img {
-    width: 100%;
-    max-width: 900px;
-    /* keep large image limit on desktop */
+    max-width: 100%;
+    width: auto; /* lets image stay natural size */
+    max-width: 900px; /* keeps large image limit on desktop */
     height: auto;
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 4px;
