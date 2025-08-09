@@ -172,3 +172,73 @@ input:checked+.slider:before {
 .nav-links a:hover::after {
     transform: scaleX(1);
 }
+
+
+/* ====== ABOUT PAGE ONLY ====== */
+/* Match gallery container style */
+.about-profile {
+    display: flex;
+    align-items: center; /* Vertically center text & image */
+    justify-content: center; /* Center section horizontally */
+    gap: 20px;
+    max-width: 2000px;
+    margin: 20px auto; /* Center in page */
+    padding: 10px;
+}
+
+/* Match gallery image style for profile */
+.profile-photo {
+    width: 700px;
+    height: auto;
+    border: 4px solid var(--image-border-color); /* Uses same CSS variable as other pages */
+    border-radius: 8px;
+    object-fit: cover;
+    background-color: var(--image-bg-color); /* Same background as gallery */
+    box-shadow: var(--image-shadow); /* Same shadow if you have one */
+}
+
+/* Text section beside image */
+.profile-text {
+    max-width: 1000px;
+    text-align: center;
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+/* Match gallery layout for about gallery */
+.about-gallery {
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Wrap images on smaller screens */
+}
+
+/* Match gallery image style */
+.about-gallery img {
+    width: 1200px;
+    height: auto;
+    border: 4px solid var(--image-border-color);
+    border-radius: 8px;
+    object-fit: cover;
+    background-color: var(--image-bg-color);
+    box-shadow: var(--image-shadow);
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+    .about-profile {
+        flex-direction: column;
+        /* Stack image and text */
+        text-align: center;
+    }
+
+    .about-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-gallery img {
+        width: 90%;
+    }
+}
