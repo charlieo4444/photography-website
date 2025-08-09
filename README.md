@@ -1,4 +1,4 @@
-# Photography Website
+# Charlie Ogle Photography
 
 All photographs are © 2025 Charlie Ogle. All rights reserved.
 
