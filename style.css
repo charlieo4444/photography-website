@@ -170,6 +170,12 @@ hr {
     box-shadow: var(--image-shadow);
 }
 
+@media (min-width: 1025px) {
+    .hamburger {
+        display: none;
+    }
+}
+
 @media (max-width: 1024px) {
     .about-profile {
         flex-direction: column;
@@ -222,10 +228,6 @@ hr {
     .nav-links.active {
         display: flex;
     }
-}
-
-.hamburger {
-    display: none;
 }
 
 footer {
